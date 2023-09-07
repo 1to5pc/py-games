@@ -1,4 +1,5 @@
 import random
+import platform
 nplayers=0
 score1=0
 score2=0
@@ -16,6 +17,14 @@ def choose_players():
 def choose_color():
     global colqor
     colqor = random.randint(1,4)
+def sysinfo():
+     py_ver=(platform.python_version())
+     systype=(platform.system())
+     print("Python version:", py_ver)
+     print("System type:", systype)
+     print()
+sysinfo()
+input("Press Enter to start game...")
 
 choose_players()
 choose_color()
