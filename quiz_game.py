@@ -6,8 +6,11 @@ nplayers=0
 nowplaying=0
 
 def choose_players():
-    nplayers=int(input("Input the number of players(1-4): "))
-    for x in range (1,(nplayers+1)):
+     try:
+         nplayers=int(input("Input the number of players(1-4): "))
+     except:
+         nplayers=1
+     for x in range (1,(nplayers+1)):
             playernm=str(input("Input player name: "))
             globals()['player'+str(x)] = playernm
             globals()['score'+str(x)] = 0
@@ -28,6 +31,7 @@ def random_qno(qlistlen):
 def scoring_system():
      global nowplaying
      global score1
+     score=0
      tryno=1
      print("Now playing:", str(player1), "(" + str(nowplaying) + ")")
      if color=="sci_q":
@@ -40,17 +44,13 @@ def scoring_system():
           usranswer=str(input(question))
           usranswer=usranswer.lower()
           if usranswer == answer:
-               score1=score1+2
+               score1+=2
                print("Your answer is correct!")
                tryno=3
           else:
                print("Try again.")
                tryno=tryno+1
-
-          
-          
-     
-
+     print("Your score is:", score1)
 
 def sysinfo():
      py_ver=(platform.python_version())
