@@ -5,7 +5,7 @@
 ### Python quiz game
 Status:
 - [x] Create UI to initialize users
-- [ ] Add questions and answers for:
+- [-] Add questions and answers for:
   - [x] Science [7/7]
   - [x] History [7/7]
   - [ ] General Knowledge [0/7]
