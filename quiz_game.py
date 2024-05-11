@@ -11,7 +11,9 @@ def choose_players():
      except:
          nplayers=1
      for x in range (1,(nplayers+1)):
-            playernm=str(input("Input player name: "))
+            playernm=''
+            while playernm=='':  
+               playernm=str(input("Input player name: "))
             globals()['player'+str(x)] = playernm
             globals()['score'+str(x)] = 0
 
